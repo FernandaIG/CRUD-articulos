@@ -14,7 +14,7 @@ const Form = () => {
         },
         {
             id_marca: '3',
-            marca: 'HyM'
+            marca: 'H&M'
         }
     ]
     const articulo = [
@@ -128,7 +128,7 @@ const Form = () => {
             <br />
             <div>
                 <table className="table table-bordered">
-                    <thead>
+                    <thead className="thead-light">
                         <tr>
                             <th>ID</th>
                             <th>SKU</th>
@@ -145,7 +145,7 @@ const Form = () => {
                                 <td>{el.SKU}</td>
                                 <td>{el.descripcion}</td>
                                 <td>{el.precio}</td>
-                                <td>{el.marca === '1' ? 'Old navy' : el.marca === '2' ? 'GAP' : 'HyM'}</td>
+                                <td>{el.marca === '1' ? 'Old navy' : el.marca === '2' ? 'GAP' : 'H&M'}</td>
                                 <td>
                                     <button
                                         className="btn btn-primary mr-2"
@@ -219,23 +219,12 @@ const Form = () => {
                     <label>Precio</label>
                     <input
                         className="form-control"
-                        type="text"
+                        type="number"
                         name="precio"
                         value={selecc.precio}
                         onChange={handleChange('precio')}
                     />
                 </div>
-
-                {/* <div className="form-group">
-                    <label>Marca</label>
-                    <input
-                        className="form-control"
-                        type="text"
-                        name="precio"
-                        value={selecc.marca}
-                        onChange={handleChange('marca')}
-                    />
-                </div> */}
 
                 <div>
                     <label>Marca</label>
@@ -335,7 +324,7 @@ const Form = () => {
                     <label>Precio</label>
                     <input
                         className="form-control"
-                        type="text"
+                        type="number"
                         name="precio"
                         value={selecc ? selecc.precio : ''}
                         onChange={handleChange('precio')}
@@ -385,9 +374,13 @@ const Form = () => {
 
     return (
         <div>
-            <h3>Artīculos</h3>
-            {tabla()}
-            {modal()}
+            <div className="jumbotron">
+            <h2>Tabla de artīculos</h2>
+            </div>
+            <div>
+                {tabla()}
+                {modal()}
+            </div>
         </div>
     );
 
